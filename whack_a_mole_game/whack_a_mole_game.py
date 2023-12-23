@@ -19,7 +19,7 @@ mole_pos = [(25, 45), (200, 45), (370, 45), (540, 45), (25, 175), (200, 175), (3
 
 while running:
     time = pg.time.get_ticks() // 1000
-   
+    
     for event in pg.event.get():
         check_time = False
         if event.type == pg.QUIT:
@@ -27,24 +27,25 @@ while running:
         elif event.type == pg.MOUSEBUTTONDOWN:
             score += 1
 
-        if time > 20:
-            if score >= 10:
-                print("victory")
-                running = False
-            else:
-                print("lose")
-                running = False
     if pg.time.get_ticks() // 1000 % 2 == 0:
         if check_time == True:
             screen.blit(mole_img, random.choice(mole_pos))
             pg.display.update() 
-            
+            pg.time.wait(500)
             check_time = False
     else:
         check_time = True
     time_text = font.render(str(time), True, (0, 0, 0), None)
     score_text = font.render(str(score), True, (0, 0, 0), None)
     
+    if time > 20:
+            if score >= 10:
+                print("victory")
+                running = False
+            else:
+                print("lose")
+                running = False
+                
     screen.blit(background_img, background_img.get_rect())
     screen.blit(time_text, (680, 55))
     screen.blit(score_text, (55, 55))

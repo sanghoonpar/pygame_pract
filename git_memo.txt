@@ -1,3 +1,0 @@
-git add .
-git commit -m '커밋 메시지 작성'
-git push

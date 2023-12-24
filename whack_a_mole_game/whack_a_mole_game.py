@@ -17,6 +17,7 @@ score = 0
 font = pg.font.SysFont("nanumbarungothic", 50)
 mole_pos = [(25, 45), (200, 45), (370, 45), (540, 45), (25, 175), (200, 175), (370, 175), (540, 175), (25, 305), (200, 305), (370, 305), (540, 305)]
 
+print('test')
 while running:
     time = pg.time.get_ticks() // 1000
     

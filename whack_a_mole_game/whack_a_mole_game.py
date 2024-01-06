@@ -17,6 +17,8 @@ hammer_img = pg.transform.scale(hammer_img, (150, 150))
 running = True
 vic_img = pg.image.load("pygame_pract/whack_a_mole_game/src/victory.jpg")
 los_img = pg.image.load("pygame_pract/whack_a_mole_game/src/lose.jfif")
+vic_img = pg.transform.scale(vic_img, (400, 400))
+los_img = pg.transform.scale(los_img, (400, 400))
 score = 0
 font = pg.font.SysFont("nanumbarungothic", 50)
 mole_pos = [(35, 70), (210, 70), (380, 70), (550, 70), (35, 210), (210, 210), (380, 210), (550, 210), (35, 340), (210, 340), (380, 340), (550, 340)]
@@ -58,12 +60,14 @@ while running:
     if time > 20:
         if score >= 10:
             pg.time.delay(500)
-            screen.blit(vic_img, vic_img.get_rect())
+            screen.blit(vic_img, (200,150))
+            pg.display.update()
             pg.time.delay(3000)
             running = False
         else:
             pg.time.delay(500)
-            screen.blit(los_img, los_img.get_rect())
+            screen.blit(los_img, (200,150))
+            pg.display.update()
             pg.time.delay(3000)
             running = False
 
